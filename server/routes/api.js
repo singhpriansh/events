@@ -49,4 +49,136 @@ router.post("/login", (req, res) =>{
     })
 })
 
+router.get("/events", (req, res) =>{
+    let events = [
+        {
+            "_id": "1",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "2",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "3",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "4",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "5",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "6",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "7",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "8",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "9",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "10",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+    ]
+    res.json(events)
+})
+
+router.get("/special", (req, res) =>{
+    let events = [
+        {
+            "_id": "1",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "2",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "3",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "4",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "5",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "6",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "7",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "8",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "9",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+        {
+            "_id": "10",
+            "name": "Auto Expo",
+            "description": "lkcnfmkcmc",
+            "date": "2021-0423T21:32:235Z"
+        },
+    ]
+    res.json(events)
+})
+
 module.exports = router
