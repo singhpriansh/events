@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
       email: registerUserData.value.email,
       password: registerUserData.value.password
     }
-    this._auth.registerUser(value);
+    this._auth.registerUser(value)
   }
 
 }
