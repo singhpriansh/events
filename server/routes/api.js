@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const user = require('../models/user');
 const User = require('../models/user');
 
-const db = "mongodb+srv://secureuser:FCIokCNFUgMqkelI@cluster0.c7q1k.mongodb.net/node-angular?retryWrites=true&w=majority"
+const db = "mongodb+srv://secureuser:<password>@cluster0.c7q1k.mongodb.net/node-angular?retryWrites=true&w=majority"
 mongoose.connect(db)
     .then(() => {
         console.log('Connected to the database!')
