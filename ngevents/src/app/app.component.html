@@ -17,9 +17,15 @@
         <a class="nav-link" routerLink="/special" routerLinkActive="active">Members</a>
       </li>
     </ul>
-    <ul class="navbar-nav">
-        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-        <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>        
+    <ul class="navbar-nav" *ngIf="!this.loggedIn()">
+      <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+      <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+    </ul>
+    <ul class="navbar-nav" *ngIf="this.loggedIn()">
+      <a class="nav-link"
+        style="cursor:pointer"
+        (click)="this.logout()"
+        routerLinkActive="active">Logout</a>
     </ul>
   </div>
 </nav>
