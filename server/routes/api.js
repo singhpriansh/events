@@ -1,5 +1,6 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const router = express.Router();
 const mongoose = require('mongoose');
 const user = require('../models/user');
 const User = require('../models/user');
@@ -25,7 +26,9 @@ router.post("/register",(req,res) =>{
         if(error){
             console.log(error)
         }else{
-            res.status(201).send(registerUser)
+            let payload = { subject: registerUser._id };
+            let token = jwt.sign(payload, 'secretKey');
+            res.status(201).send({ token });
         }
     })
 })
@@ -42,7 +45,9 @@ router.post("/login", (req, res) =>{
                 if(user.password !== userDate.password){
                     res.status(401).send('Invalid password')
                 }else{
-                    res.status(200).send(user)
+                    let payload = { subject: user._id };
+                    let token = jwt.sign(payload, 'secretKey');
+                    res.status(200).send({ token });
                 }
             }
         }
@@ -55,61 +60,61 @@ router.get("/events", (req, res) =>{
             "_id": "1",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-04-23T21:32:42.235Z"
         },
         {
             "_id": "2",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-05-23T21:32:42.235Z"
         },
         {
             "_id": "3",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-14-23T21:32:42.235Z"
         },
         {
             "_id": "4",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-12-23T21:32:42.235Z"
         },
         {
             "_id": "5",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-23-23T21:32:42.235Z"
         },
         {
             "_id": "6",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-29-23T21:32:42.235Z"
         },
         {
             "_id": "7",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-18-23T21:32:42.235Z"
         },
         {
             "_id": "8",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-24-23T21:32:42.235Z"
         },
         {
             "_id": "9",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-14-23T21:32:42.235Z"
         },
         {
             "_id": "10",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-04-23T21:32:42.235Z"
         },
     ]
     res.json(events)
@@ -121,61 +126,61 @@ router.get("/special", (req, res) =>{
             "_id": "1",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-04-23T21:32:42.235Z"
         },
         {
             "_id": "2",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-04-23T21:32:42.235Z"
         },
         {
             "_id": "3",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-14-23T21:32:42.235Z"
         },
         {
             "_id": "4",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-04-23T21:32:42.235Z"
         },
         {
             "_id": "5",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-04-23T21:32:42.235Z"
         },
         {
             "_id": "6",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-14-23T21:32:42.235Z"
         },
         {
             "_id": "7",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-04-23T21:32:42.235Z"
         },
         {
             "_id": "8",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-06-23T21:32:42.235Z"
         },
         {
             "_id": "9",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-09-23T21:32:42.235Z"
         },
         {
             "_id": "10",
             "name": "Auto Expo",
             "description": "lkcnfmkcmc",
-            "date": "2021-0423T21:32:235Z"
+            "date": "2021-01-23T21:32:42.235Z"
         },
     ]
     res.json(events)
